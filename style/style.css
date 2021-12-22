@@ -1,0 +1,441 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+#name-queue-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#name{ 
+    background-image: linear-gradient(45deg, #e60073, orangered, #f50000);
+    width: 13rem;
+    text-align: center;
+    margin: 1rem;
+}
+
+#name h2{
+    font-family: 'Otomanopee One', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    padding: 0.5rem;
+    letter-spacing: 1.5px;
+}
+
+#music-card-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18rem;
+    height: 34rem;
+    border-radius: 2rem;
+    padding: 1rem 2.5rem 2.5rem 2.5rem;
+    text-align: center;
+    background-color: #0f0f0f;
+    z-index: 1;
+    border-radius: 4rem;
+    color: white;   
+    box-shadow: inset 9px 9px 14px #060606, inset -9px -9px 14px #181818;
+    overflow: hidden;
+}
+
+.fa-headphones-alt{
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: #f50000;
+    border: 2px solid #f50000;
+}
+
+.fa-sliders-h{
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: 2px solid #f50000;
+    background-color: #f50000;
+    cursor: pointer;
+}
+
+#song-name{
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    margin: 0.8rem 0 0.5rem 0;
+    animation: song-name-animation 3s linear infinite alternate;  
+}
+
+@keyframes song-name-animation {
+    0%{
+        color: #f50000;
+    }
+
+    25%{
+        color: cyan;
+    }
+
+    50%{
+        color: #e60073;
+    }
+
+    100%{
+        color: greenyellow;
+    }
+}
+
+#song-artist{
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    margin: 0 2rem 2rem 2rem;
+}
+
+#img-container{
+    width: 15em;
+    height: 15rem;
+    margin: auto;
+    border-radius: 50%;
+    border:0.5rem solid transparent;
+    border-image: linear-gradient(to right, #00ffff, greenyellow, #e60073);
+    border-image-slice: 1;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-image: 3px solid linear-gradient(to right, #00ffff, greenyellow, #e60073);
+}
+
+#progress-container{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#duration-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#progress-line-box{
+    position: relative;
+    height: 0.3rem;
+    border-radius: 3rem;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+#progress-line{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color:#f50000;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+
+#audio-control{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#audio-control .fa-volume-up{
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    border: 3px solid #f50000;
+    padding: 0.3rem;
+    border-radius: 50%;
+    background-color: #f50000;
+    color: white;
+    cursor: pointer;
+}
+
+#volume-slider{
+    appearance: none;
+    outline: none;
+    height: 0.2rem;
+    width: 50%;
+    opacity: 0;
+    transition: all ease-in 0.3s;
+    margin-left: -2.3rem;
+    cursor: pointer;
+}
+
+#volume-slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: #f50000;
+    cursor: pointer;
+}
+ 
+#volume-slider.vol-show-hide{
+    opacity: 1;
+}
+
+.beats-effect-container{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+.beats{
+    height: 2rem;
+    width: 0.2rem;
+    background-color: #ff0000;
+    border-radius: 1rem;
+    margin-right: 0.2rem;
+    animation: anime 1s linear infinite;
+    transform-origin: bottom;
+}
+
+@keyframes anime {
+    0%{
+        transform: scale(0);
+    }
+
+    50%{
+        transform: scale(1);
+    }
+
+    100%{
+        transform: scale(0);
+    }
+}
+
+.beats:nth-child(2){
+    animation-delay: 0.1s;
+}
+.beats:nth-child(3){
+    animation-delay: 0.2s;
+}
+.beats:nth-child(4){
+    animation-delay: 0.3s;
+}
+.beats:nth-child(5){
+    animation-delay: 0.4s;
+}
+.beats:nth-child(6){
+    animation-delay: 0.5s;
+}
+.beats:nth-child(7){
+    animation-delay: 0.6s;
+}
+.beats:nth-child(8){
+    animation-delay: 0.7s;
+}
+.beats:nth-child(9){
+    animation-delay: 0.8s;
+}
+.beats:nth-child(10){
+    animation-delay: 0.9s;
+}
+  
+#music-buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+
+#music-buttons .fas{
+    font-size: 1.8rem;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: #0f0f0f;
+    color: #f50000;
+    padding: 0.8rem;
+    cursor: pointer;
+    box-shadow: 6px 6px 7px #070707,
+             -6px -6px 7px #070707;
+    /*box-shadow:  5px 5px 6px #060606,
+             -5px -5px 6px #181818;*/
+}
+
+#music-buttons .far{
+    font-size: 2.5rem;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: #0f0f0f;
+    color: #f50000;
+    padding: 1rem;
+    cursor: pointer;
+    box-shadow: 6px 6px 7px #070707,
+             -6px -6px 7px #171717;
+}
+
+j{
+    position: absolute;
+    height: 200px;
+    background: linear-gradient(transparent, white);
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    animation: animate1 5s linear infinite;
+}
+
+j:nth-child(3n+1){
+    background: linear-gradient(transparent, #00ffff);
+}
+
+j:nth-child(3n+2){
+    background: linear-gradient(transparent, #00ff00);
+}
+
+j:nth-child(3n+3){
+    background: linear-gradient(transparent, #ff0000);
+}
+
+j:nth-child(3n+4){
+    background: linear-gradient(transparent, #ff00ff);
+}
+
+j:nth-child(3n+35){
+    background: linear-gradient(transparent, #ffd700);
+}
+
+@keyframes animate1 {
+    from{
+        transform: translateY(-200px);
+    }
+    to{
+        transform: translateY(calc(100vh + 200px));
+    }
+}
+
+
+k{
+    position: absolute;
+    width: 200px;
+    background: linear-gradient(transparent, white);
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    animation: animate2 5s linear infinite;
+}
+
+k:nth-child(3n+1){
+    background: linear-gradient(transparent, #ffd700);
+}
+
+k:nth-child(3n+2){
+    background: linear-gradient(transparent, #ff00ff);
+}
+
+k:nth-child(3n+3){
+    background: linear-gradient(transparent, #ff0000);
+}
+
+k:nth-child(3n+4){
+    background: linear-gradient(transparent, #00ff00);
+}
+
+k:nth-child(3n+5){
+    background: linear-gradient(transparent, #00ffff);
+}
+
+@keyframes animate2 {
+    from{
+        transform: translateX(-200px);
+    }
+    to{
+        transform: translateX(calc(100vh + 600px));
+    }
+}
+
+
+#audio-list{
+    position: absolute;
+    left: 0;
+    bottom: -75%;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    border-radius: inherit;
+    background-color: #0f0f0f;
+    opacity: 0.97;
+    transition: all 0.5s ease-in-out;
+}
+
+#audio-list ul{
+    padding: 0;
+    list-style-type: none;
+    border-radius: inherit;
+    overflow-y: auto;
+    max-height: 25rem;
+    text-align: center;
+    cursor: pointer;  
+}
+
+#audio-list ul::-webkit-scrollbar{
+    width: 0;
+}
+
+#audio-list ul li{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    border-bottom: 2px solid #f50000;
+    margin: 0;
+}
+
+#audio-list.show{
+    bottom: 0;
+}
+
+#audio-list.hide{
+    bottom: -75%;
+}
+
+#audio-list ul li h4{
+    margin: 1rem 0;
+}
+
+#cross-btn{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#audio-list ul li h5{
+    margin: 0 0 1rem 0;
+}
+
+ul li.playing{
+    animation: song-name-animation1 1s linear infinite alternate;
+}
+
+@keyframes song-name-animation1 {
+    0%{
+        color: cyan;
+    }
+
+    50%{
+        color: #e60073;
+    }
+
+    100%{
+        color: greenyellow;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/906e7028b4.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Roboto:wght@100;300;400;500&family=Source+Sans+Pro:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/fav-icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/fav-icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/fav-icon/favicon-16x16.png">
+    <link rel="manifest" href="images/fav-icon/site.webmanifest">
+    <link rel="mask-icon" href="images/fav-icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Music Player</title>
+</head>
+
+<body>
+    <div id="name">
+        <h2>MuSiC PlAyEr</h2>
+    </div>
+    <div id="music-card-container">
+        <div id="name-queue-container">
+            <i class="fas fa-headphones-alt" id=""></i>
+            <div>
+                <h2 id="song-name">Downtown</h2>
+                <h3 id="song-artist">Guru Randhawa</h3>
+            </div>
+            <i class="fas fa-sliders-h" id="audio-list-show-btn"></i>
+        </div>
+
+        <div id=img-container>
+            <img src="images/downtown.jpg" alt="">
+        </div>
+        <audio src="music/Downtown.mp3"></audio>
+        <div id="progress-container">
+            <div id=duration-container>
+                <div id=start-time>0:00</div>
+                <div id="end-time">3:36</div>
+            </div>
+            <div id="progress-line-box">
+                <div id="progress-line"></div>
+            </div>
+        </div>
+        <div id="audio-control">
+            <i class="fas fa-volume-up" id="volume-btn" title="Volume"></i>
+            <input type="range" min="0" max="100" value="90" id="volume-slider">
+            <div class="beats-effect-container">
+                <div class="beats"></div>
+                <div class="beats"></div>
+                <div class="beats"></div>
+                <div class="beats"></div>
+                <div class="beats"></div>
+                <div class="beats"></div>
+                <div class="beats"></div>
+                <div class="beats"></div>
+                <div class="beats"></div>
+                <div class="beats"></div>
+            </div>
+        </div>
+        <div id="music-buttons">
+            <i class="fas fa-backward" id="prev-btn" title="Previous"></i>
+            <i class="fas fa-play-circle" id="play-btn" title="Play"></i>
+            <i class="fas fa-forward" id="next-btn" title=Next></i>
+        </div>
+        <div id="audio-list">
+            <ul id="ul">
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function backgroundUIVertical(){
+            let noOfLines = 100;
+            let body = document.querySelector('body');
+            let j = 0;
+
+            while(j < noOfLines){
+                let line = document.createElement('j');
+
+                let widthValue = Math.random() * 5;
+                let linePosX = Math.floor(Math.random() * window.innerWidth);
+                let delay = Math.random() * -20;
+
+                line.style.width = 0.2 + widthValue+'px';
+                line.style.left = linePosX+'px';
+                line.style.animationDelay = delay+'s';
+
+                body.appendChild(line);
+                j++;
+            }
+        }
+        backgroundUIVertical();
+
+        function backgroundUIHorizontal(){
+            let noOfLines = 100;
+            let body = document.querySelector('body');
+            let k = 0;
+
+            while(k < noOfLines){
+                let line = document.createElement('k');
+
+                let heightValue = Math.random() * 5;
+                let linePosX = Math.floor(Math.random() * window.innerWidth);
+                let delay = Math.random() * -20;
+
+                line.style.height = 0.2 + heightValue+'px';
+                line.style.top = linePosX+'px';
+                line.style.animationDelay = delay+'s';
+
+                body.appendChild(line);
+                k++;
+            }
+        }
+        backgroundUIHorizontal();
+    </script>
+</body>
+
+</html>
